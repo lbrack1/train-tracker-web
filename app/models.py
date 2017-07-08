@@ -5,9 +5,9 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 from app import db, login_manager
 
-class Employee(UserMixin, db.Model):
+class User(UserMixin, db.Model):
     """
-    Create an Employee table
+    Create an user table to store each user
     """
 
     # Ensures table will be named in plural and not in singular
@@ -45,12 +45,12 @@ class Employee(UserMixin, db.Model):
         return check_password_hash(self.password_hash, password)
 
     def __repr__(self):
-        return '<Employee: {}>'.format(self.username)
+        return '<User: {}>'.format(self.username)
 
 # Set up user_loader
 @login_manager.user_loader
 def load_user(user_id):
-    return Employee.query.get(int(user_id))
+    return User.query.get(int(user_id))
 
 class Department(db.Model):
     """
@@ -62,7 +62,7 @@ class Department(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(60), unique=True)
     description = db.Column(db.String(200))
-    employees = db.relationship('Employee', backref='department',
+    user = db.relationship('User', backref='department',
                                 lazy='dynamic')
 
     def __repr__(self):
@@ -78,7 +78,7 @@ class Role(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(60), unique=True)
     description = db.Column(db.String(200))
-    employees = db.relationship('Employee', backref='role',
+    user = db.relationship('User', backref='role',
                                 lazy='dynamic')
 
     def __repr__(self):
