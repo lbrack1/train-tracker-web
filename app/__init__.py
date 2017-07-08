@@ -19,7 +19,7 @@ login_manager = LoginManager()
 def create_app(config_name):
 
     if os.getenv('FLASK_CONFIG') == "production":
-        print here
+        print("here")
         app = Flask(__name__)
         app.config.update(
             SECRET_KEY=os.getenv('SECRET_KEY'),
