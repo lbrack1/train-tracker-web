@@ -5,6 +5,7 @@ from flask_login import current_user, login_required
 
 from . import home
 
+# add homepage
 @home.route('/')
 def homepage():
     """
@@ -12,6 +13,7 @@ def homepage():
     """
     return render_template('home/index.html', title="Welcome")
 
+# add user dashboard. Login needed
 @home.route('/dashboard')
 @login_required
 def dashboard():
@@ -19,6 +21,11 @@ def dashboard():
     Render the dashboard template on the /dashboard route
     """
     return render_template('home/dashboard.html', title="Dashboard")
+
+# add about page
+@home.route('/about')
+def aboutpage():
+    return render_template('about/about.html', titel="About")
 
 # add admin dashboard view
 @home.route('/admin/dashboard')
