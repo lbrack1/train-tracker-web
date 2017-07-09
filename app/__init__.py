@@ -53,6 +53,8 @@ def create_app(config_name):
     from .home import home as home_blueprint
     app.register_blueprint(home_blueprint)
 
+    from .contact import contact as contact_blueprint
+    app.register_blueprint(contact_blueprint)
 
     #ERROR HANDLERS
     @app.errorhandler(403)
