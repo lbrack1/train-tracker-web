@@ -25,7 +25,7 @@ def dashboard():
 # add about page
 @home.route('/about')
 def aboutpage():
-    return render_template('about/about.html', titel="About")
+    return render_template('home/about.html', titel="About")
 
 # add admin dashboard view
 @home.route('/admin/dashboard')
