@@ -1,3 +1,4 @@
+
 /* app/static/css/style.css */
 
 body, html {
@@ -73,7 +74,7 @@ p.copyright {
     color: #f8f8f8;
     background: url(../img/intro-bg.jpg) no-repeat center center;
     background-size: cover;
-    height: 100%;
+    height: 50%;
 }
 
 .intro-message {
@@ -124,6 +125,238 @@ p.copyright {
     margin-left: auto;
     margin-right: auto;
 }
+
+.info-section {
+    box-sizing: border-box;
+    color: rgb(74, 74, 74);
+    height: 1627px;
+    text-decoration: none solid rgb(74, 74, 74);
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+    width: 783px;
+    column-rule-color: rgb(74, 74, 74);
+    perspective-origin: 391.5px 813.5px;
+    transform-origin: 391.5px 813.5px;
+    caret-color: rgb(74, 74, 74);
+    background: rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;
+    border: 0px none rgb(74, 74, 74);
+    font: normal normal normal normal 16px / 24px "Gotham A", "Gotham B", Helvetica, Arial, sans-serif;
+    outline: rgb(74, 74, 74) none 0px;
+    padding: 48px 24px;
+}/*Info Section*/
+
+.container-info {
+    bottom: 0px;
+    box-sizing: border-box;
+    color: rgb(74, 74, 74);
+    height: 1555px;
+    left: 0px;
+    max-width: 768px;
+    position: relative;
+    right: 0px;
+    text-decoration: none solid rgb(74, 74, 74);
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+    top: 0px;
+//    width: 735px;
+    column-rule-color: rgb(74, 74, 74);
+    perspective-origin: 367.5px 777.5px;
+    transform-origin: 367.5px 777.5px;
+    caret-color: rgb(74, 74, 74);
+    border: 0px none rgb(74, 74, 74);
+    font: normal normal normal normal 16px / 24px "Gotham A", "Gotham B", Helvetica, Arial, sans-serif;
+    outline: rgb(74, 74, 74) none 0px;
+    padding: 0px 15px;
+}/*container in info section*/
+
+.columns-text-center {
+    box-sizing: border-box;
+    color: rgb(74, 74, 74);
+    display: flex;
+    height: 305px;
+    text-align: center;
+    text-decoration: none solid rgb(74, 74, 74);
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+  //  width: 729px;
+    column-rule-color: rgb(74, 74, 74);
+    align-items: center;
+    perspective-origin: 364.5px 152.5px;
+    transform-origin: 364.5px 152.5px;
+    caret-color: rgb(74, 74, 74);
+    border: 0px none rgb(74, 74, 74);
+    font: normal normal normal normal 16px / 24px "Gotham A", "Gotham B", Helvetica, Arial, sans-serif;
+    margin: -12px -12px 12px;
+    outline: rgb(74, 74, 74) none 0px;
+}/*columns-text-center*/
+
+.columns-text-left{
+    box-sizing: border-box;
+    color: rgb(74, 74, 74);
+    height: 305px;
+    min-height: auto;
+    min-width: auto;
+    text-align: left;
+    text-decoration: none solid rgb(74, 74, 74);
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+    //width: 305px;
+    column-rule-color: rgb(74, 74, 74);
+    align-self: center;
+    perspective-origin: 152.5px 152.5px;
+    transform-origin: 152.5px 152.5px;
+    caret-color: rgb(74, 74, 74);
+    border: 0px none rgb(74, 74, 74);
+    flex: 1 1 0px;
+    font: normal normal normal normal 16px / 24px "Gotham A", "Gotham B", Helvetica, Arial, sans-serif;
+    outline: rgb(74, 74, 74) none 0px;
+    padding: 12px;
+}/*put text left side of column*/
+
+.header-info {
+    box-sizing: border-box;
+    color: rgb(54, 54, 54);
+    height: 33px;
+    text-align: left;
+    text-decoration: none solid rgb(54, 54, 54);
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+    //width: 281px;
+    word-break: break-word;
+    column-rule-color: rgb(54, 54, 54);
+    perspective-origin: 140.5px 16.5px;
+    transform-origin: 140.5px 16.5px;
+    caret-color: rgb(54, 54, 54);
+    border: 0px none rgb(54, 54, 54);
+    font: normal normal 300 normal 30px / 33.75px "Gotham A", "Gotham B", Helvetica, Arial, sans-serif;
+    margin: 0px 0px 24px;
+    outline: rgb(54, 54, 54) none 0px;
+}/*header in info section*/
+
+.para_info {
+    box-sizing: border-box;
+    color: rgb(74, 74, 74);
+    height: 224px;
+    text-align: left;
+    text-decoration: none solid rgb(74, 74, 74);
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+   // width: 281px;
+    column-rule-color: rgb(74, 74, 74);
+    perspective-origin: 140.5px 112px;
+    transform-origin: 140.5px 112px;
+    caret-color: rgb(74, 74, 74);
+    border: 0px none rgb(74, 74, 74);
+    font: normal normal normal normal 19.2px / 28.8px "Gotham A", "Gotham B", Helvetica, Arial, sans-serif;
+    margin: 0px;
+    outline: rgb(74, 74, 74) none 0px;
+}/*paragraph in info section*/
+
+.columns-is-vcentered{
+    box-sizing: border-box;
+    color: rgb(74, 74, 74);
+    height: 304px;
+    min-height: auto;
+    min-width: auto;
+    text-align: center;
+    text-decoration: none solid rgb(74, 74, 74);
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+   // width: 424px;
+    column-rule-color: rgb(74, 74, 74);
+    align-self: center;
+    perspective-origin: 212px 152px;
+    transform-origin: 212px 152px;
+    caret-color: rgb(74, 74, 74);
+    border: 0px none rgb(74, 74, 74);
+    flex: 1 1 0px;
+    font: normal normal normal normal 16px / 24px "Gotham A", "Gotham B", Helvetica, Arial, sans-serif;
+    outline: rgb(74, 74, 74) none 0px;
+    padding: 12px;
+}/*Put this around image in info section*/
+
+ .info-image{
+    bottom: 0px;
+    box-sizing: border-box;
+    color: rgb(74, 74, 74);
+    display: block;
+    height: 280px;
+    left: 0px;
+    max-width: 400px;
+    position: relative;
+    right: 0px;
+    text-align: center;
+    text-decoration: none solid rgb(74, 74, 74);
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+    top: 0px;
+    vertical-align: middle;
+    //width: 400px;
+    column-rule-color: rgb(74, 74, 74);
+    perspective-origin: 200px 140px;
+    transform-origin: 200px 140px;
+    caret-color: rgb(74, 74, 74);
+    border: 0px none rgb(74, 74, 74);
+    font: normal normal normal normal 16px / 24px "Gotham A", "Gotham B", Helvetica, Arial, sans-serif;
+    outline: rgb(74, 74, 74) none 0px;
+}/*Image in infosection*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
