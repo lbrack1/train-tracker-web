@@ -177,7 +177,7 @@ p.copyright {
     text-decoration: none solid rgb(74, 74, 74);
     text-rendering: optimizeLegibility;
     text-size-adjust: 100%;
-    width: 75%;
+//    width: 75%;
    // max-width 1800px;
     column-rule-color: rgb(74, 74, 74);
     perspective-origin: 391.5px 813.5px;
@@ -187,6 +187,7 @@ p.copyright {
     border: 0px none rgb(74, 74, 74);
     font: normal normal normal normal 16px / 24px "Gotham A", "Gotham B", Helvetica, Arial, sans-serif;
     outline: rgb(74, 74, 74) none 0px;
+    margin:0 auto;
     padding: 40px 24px;
 }/*Info Section*/
 
@@ -196,7 +197,7 @@ p.copyright {
     color: rgb(74, 74, 74);
     height: auto;
     left: 0px;
-    max-width: 1000px;
+//    max-width: 1000px;
     min-width: 600px;
     position: relative;
     right: 0px;
@@ -204,16 +205,16 @@ p.copyright {
     text-rendering: optimizeLegibility;
     text-size-adjust: 100%;
     top: 0px;
-    width: auto;
+    //width: auto;
     column-rule-color: rgb(74, 74, 74);
     perspective-origin: 367.5px 777.5px;
     transform-origin: 367.5px 777.5px;
     caret-color: rgb(74, 74, 74);
     border: 0px none rgb(74, 74, 74);
     font: normal normal normal normal 16px / 24px "Gotham A", "Gotham B", Helvetica, Arial, sans-serif;
-    margin: 0px 26.5px;    
+    margin: 0px 150px 0px 150px;    
     outline: rgb(74, 74, 74) none 0px;
-    padding: 50px, 15px;
+    padding: 50px 15px 0px 15px;
 }/*container in info section*/
 
 .column-text-left{
