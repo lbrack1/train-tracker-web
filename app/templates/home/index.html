@@ -19,8 +19,8 @@
     </div>
 </div>
 
-<section class="info-section">
-  <div class="container">
+<section class="section">
+  <div class="container-info">
 
     <div class="column-is-vcentered">
       <div class="column-text-left">
@@ -61,11 +61,28 @@ The cryptocurrency world is volatile and unregulated. Frequently coins experienc
       <div class="column-text-left">
         <h2 class="header-info">The Project</h2>
         <p class="para-info">
-The CryptoTracker dashboard gives 
+The CryptoTracker dashboard will give users access a variety of data relevant to their portfolio. Currently the analytics software is underdevlopment and we hope to have it live soon. If the project interests you and you'd like to help get off the ground please donate. 
         </p>
       </div>
     </div>
 
+  </div>
+</section>
+
+<section class="buttons-section">
+  <div class="container-buttons">
+    <h1 class="header-info-bottom">Ready to transform your portfolio and support the project?</h1>
+    <div class="column-bottom-buttons">
+      <div class="column">
+	<a href="{{ url_for('auth.register') }}" class="button-bottom"> Register</a>
+      </div>
+      <div class="column"></div>
+      <div class="column"></div>
+      <div class="column">
+        <a href="{{ url_for('home.homepage') }}" class="button-bottom"> Donate</a>
+      </div>
+      <div class="column"></div>
+    </div> 
   </div>
 </section>
 

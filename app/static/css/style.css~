@@ -126,14 +126,36 @@ p.copyright {
     margin-right: auto;
 }
 
+/*section home page buttons
+.buttons-section {
+    box-sizing: border-box;
+    height: auto;
+    text-decoration: none solid rgb(74, 74, 74);
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+    width: auto;
+    column-rule-color: rgb(74, 74, 74);
+    perspective-origin: 150px 224.5px;
+    transform-origin: 150px 224.5px;
+    caret-color: rgb(74, 74, 74);
+    background-color: (26, 26, 26, 0.05)
+    background: rgba(26, 26, 26, 0.05) none repeat scroll 0% 0% / auto padding-box border-box;
+    border: 0px none rgb(74, 74, 74);
+    font: normal normal normal normal 16px / 24px "Gotham A", "Gotham B", Helvetica, Arial, sans-serif;
+    outline: rgb(74, 74, 74) none 0px;
+    padding: 48px 24px;
+}
+
+/*
 .info-section {
     box-sizing: border-box;
     color: rgb(74, 74, 74);
-    height: 1627px;
+    height: auto;
     text-decoration: none solid rgb(74, 74, 74);
     text-rendering: optimizeLegibility;
     text-size-adjust: 100%;
     width: 75%;
+   // max-width 1800px;
     column-rule-color: rgb(74, 74, 74);
     perspective-origin: 391.5px 813.5px;
     transform-origin: 391.5px 813.5px;
@@ -142,7 +164,7 @@ p.copyright {
     border: 0px none rgb(74, 74, 74);
     font: normal normal normal normal 16px / 24px "Gotham A", "Gotham B", Helvetica, Arial, sans-serif;
     outline: rgb(74, 74, 74) none 0px;
-    padding: 48px 24px;
+    padding: 40px 24px;
 }/*Info Section*/
 
 .container-info {
@@ -151,13 +173,14 @@ p.copyright {
     color: rgb(74, 74, 74);
     height: auto;
     left: 0px;
-    max-width: 75%;
+    max-width: 1000px;
+    min-width: 600px;
     position: relative;
     right: 0px;
     text-decoration: none solid rgb(74, 74, 74);
     text-rendering: optimizeLegibility;
     text-size-adjust: 100%;
-    top: -50px;
+    top: 0px;
     width: auto;
     column-rule-color: rgb(74, 74, 74);
     perspective-origin: 367.5px 777.5px;
@@ -167,7 +190,7 @@ p.copyright {
     font: normal normal normal normal 16px / 24px "Gotham A", "Gotham B", Helvetica, Arial, sans-serif;
     margin: 0px 26.5px;    
     outline: rgb(74, 74, 74) none 0px;
-    padding: 0px 15px;
+    padding: 50px, 15px;
 }/*container in info section*/
 
 .column-text-left{
@@ -224,7 +247,7 @@ p.copyright {
     text-decoration: none solid rgb(54, 54, 54);
     text-rendering: optimizeLegibility;
     text-size-adjust: 100%;
-    width: 281px;
+    width: auto;
     word-break: break-word;
     column-rule-color: rgb(54, 54, 54);
     perspective-origin: 140.5px 16.5px;
@@ -236,6 +259,27 @@ p.copyright {
     padding: 0px 0px 30px 0px;
     outline: rgb(54, 54, 54) none 0px;
 }/*header in info section*/
+
+/*Header in the home page bottom button section*/
+.header-info-bottom{
+    box-sizing: border-box;
+    color: rgb(54, 54, 54);
+    height: 99px;
+    text-align: center;
+    text-decoration: none solid rgb(54, 54, 54);
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+    width: auto;
+    word-break: break-word;
+    column-rule-color: rgb(54, 54, 54);
+    perspective-origin: 111px 49.5px;
+    transform-origin: 111px 49.5px;
+    caret-color: rgb(54, 54, 54);
+    border: 0px none rgb(54, 54, 54);
+    font: normal normal 300 normal 30px / 33.75px "Gotham A", "Gotham B", Helvetica, Arial, sans-serif;
+    margin: 0px 0px 10px;
+    outline: rgb(54, 54, 54) none 0px;
+}
 
 .para_info {
     box-sizing: border-box;
@@ -253,6 +297,7 @@ p.copyright {
     border: 0px none rgb(74, 74, 74);
     font: normal normal normal normal 19.2px / 28.8px "Gotham A", "Gotham B", Helvetica, Arial, sans-serif;
     margin: 0px;
+    padding: 10px 0px 0px 0px;
     outline: rgb(74, 74, 74) none 0px;
 }/*paragraph in info section*/
 
@@ -280,15 +325,54 @@ p.copyright {
     margin: -12px -12px 12px;
 }/*Put this around image in info section*/
 
+.column-bottom-buttons{
+    box-sizing: border-box;
+    color: rgb(74, 74, 74);
+    height: 500PX;
+    text-align: center;
+    text-decoration: none solid rgb(74, 74, 74);
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+    width: auto;
+    column-rule-color: rgb(74, 74, 74);
+    perspective-origin: 123px 127px;
+    transform-origin: 123px 127px;
+    caret-color: rgb(74, 74, 74);
+    border: 0px none rgb(74, 74, 74);
+    font: normal normal normal normal 16px / 24px "Gotham A", "Gotham B", Helvetica, Arial, sans-serif;
+    margin: 0px;
+    outline: rgb(74, 74, 74) none 0px;
+}/*Bottom column to hold buttons on home page*/
+
+.column{
+    box-sizing: border-box;
+    color: rgb(74, 74, 74);
+    height: 24px;
+    text-align: center;
+    text-decoration: none solid rgb(74, 74, 74);
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+    width: auto;
+    column-rule-color: rgb(74, 74, 74);
+    perspective-origin: 123px 12px;
+    transform-origin: 123px 12px;
+    caret-color: rgb(74, 74, 74);
+    border: 0px none rgb(74, 74, 74);
+    flex: 1 1 0px;
+    font: normal normal normal normal 16px / 24px "Gotham A", "Gotham B", Helvetica, Arial, sans-serif;
+    outline: rgb(74, 74, 74) none 0px;
+    padding: 0px;
+}/*Seperate columns in bottom button section*/
+
 .info-image{
     bottom: 0px;
     box-sizing: border-box;
     color: rgb(74, 74, 74);
     display: block;
-    max-height: 300px;
+    max-height: 250px;
     height: auto;
     left: 0px;
-    max-width: 300px;
+    max-width: 250px;
     position: relative;
     right: 0px;
     text-align: center;
@@ -306,6 +390,75 @@ p.copyright {
     font: normal normal normal normal 16px / 24px "Gotham A", "Gotham B", Helvetica, Arial, sans-serif;
     outline: rgb(74, 74, 74) none 0px;
 }/*Image in infosection*/
+
+.button-bottom {
+    bottom: 0px;
+    box-sizing: border-box;
+    color: rgb(74, 74, 74);
+    cursor: pointer;
+    display: inline-flex;
+    height: 54.8281px;
+    left: 0px;
+    position: relative;
+    right: 0px;
+    text-align: center;
+    text-decoration: none solid rgb(74, 74, 74);
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+    top: 0px;
+    vertical-align: top;
+    white-space: nowrap;
+    width: 200px;
+    column-rule-color: rgb(74, 74, 74);
+    align-items: center;
+    justify-content: center;
+    perspective-origin: 100px 27.4062px;
+    transform-origin: 100px 27.4062px;
+    user-select: none;
+    caret-color: rgb(74, 74, 74);
+    background: rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;
+    border: 1px solid rgb(74, 74, 74);
+    border-radius: 3px 3px 3px 3px;
+    font: normal normal normal normal 24px / 36px "Gotham A", "Gotham B", Helvetica, Arial, sans-serif;
+    margin: 0px 4px;
+    outline: rgb(74, 74, 74) none 0px;
+    padding: 20px 18px;
+    transition: none 0.086s ease-out 0s;
+}
+
+.container-buttons{
+    bottom: 0px;
+    box-sizing: border-box;
+    background-color: rgb(243, 243, 243);
+    height: 300px;
+    left: 0px;
+    position: relative;
+    right: 0px;
+    text-decoration: none solid rgb(74, 74, 74);
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+    top: 0px;
+    width: auto;
+    column-rule-color: rgb(74, 74, 74);
+    perspective-origin: 126px 182.5px;
+    transform-origin: 126px 182.5px;
+    caret-color: rgb(74, 74, 74);
+    border: 0px none rgb(74, 74, 74);
+    font: normal normal normal normal 16px / 24px "Gotham A", "Gotham B", Helvetica, Arial, sans-serif;
+    outline: rgb(74, 74, 74) none 0px;
+    padding: 30px;
+}/*#Wrap around buttons at the bottom of the homeage*/
+
+
+
+
+
+
+
+
+
+
+
 
 
 
