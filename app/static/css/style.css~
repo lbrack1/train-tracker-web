@@ -212,7 +212,7 @@ p.copyright {
     caret-color: rgb(74, 74, 74);
     border: 0px none rgb(74, 74, 74);
     font: normal normal normal normal 16px / 24px "Gotham A", "Gotham B", Helvetica, Arial, sans-serif;
-    margin: 0px,75px,0px,75px;    
+    margin: 0px 150px 0px 150px;    
     outline: rgb(74, 74, 74) none 0px;
     padding: 50px 15px 0px 15px;
 }/*container in info section*/
