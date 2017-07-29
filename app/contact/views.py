@@ -1,3 +1,5 @@
+#app/contact/views.py
+
 from flask import Flask, flash, render_template, request
 from forms import ContactForm
 from flask.ext.mail import Message, Mail

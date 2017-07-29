@@ -56,6 +56,9 @@ def create_app(config_name):
     from .contact import contact as contact_blueprint
     app.register_blueprint(contact_blueprint)
 
+    from .blog import blog as blog_blueprint
+    app.register_blueprint(blog_blueprint)
+
     #ERROR HANDLERS
     @app.errorhandler(403)
     def forbidden(error):
