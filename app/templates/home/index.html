@@ -108,12 +108,12 @@ The CryptoTracker dashboard will give users access a variety of data relevant to
        <a href="{{ url_for('auth.logout') }}" class="button-bottom"> Logout</a>
 
        {% else %}
-       <a href="{{ url_for('auth.login') }}" class="button-bottom"> Login</a>
+       <a href="{{ url_for('auth.register') }}" class="button-bottom"> Register</a>
        </div>
        <div class="column"></div>
        <div class="column"></div>
        <div class="column">
-       <a href="{{ url_for('auth.register') }}" class="button-bottom"> Register</a>
+       <a href="{{ url_for('home.homepage') }}" class="button-bottom"> Donate</a>
        {% endif %}
 
       </div>
