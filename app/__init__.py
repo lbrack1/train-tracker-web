@@ -48,8 +48,6 @@ def create_app(config_name):
 
     Bootstrap(app)
 
-    from app import models
-
     from .home import home as home_blueprint
     app.register_blueprint(home_blueprint)
 

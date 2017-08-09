@@ -15,15 +15,27 @@
                     <hr class="intro-divider">
 		      <div class="column">
 			<div class="column"></div>
-			<a href="{{ url_for('auth.login') }}" class="button-bottom"> Login</a>
+
+			{% if current_user.is_authenticated %}
+			<a href="{{ url_for('home.dashboard') }}" class="button-top"> Dashboard</a>
 		      </div>
 		      <div class="column"></div>
 		      <div class="column"></div>
 		      <div class="column"></div>
 		      <div class="column">
-			<a href="{{ url_for('auth.register') }}" class="button-bottom"> Register</a>
+			<a href="{{ url_for('auth.logout') }}" class="button-top"> Logout</a>
+
+			{% else %}
+			<a href="{{ url_for('auth.login') }}" class="button-top"> Login</a>
+                      </div>
+                      <div class="column"></div>
+                      <div class="column"></div>
+		      <div class="column"></div>
+                      <div class="column">
+                        <a href="{{ url_for('auth.register') }}" class="button-top"> Register</a>
+		    {% endif %}
+		      
 		      </div>
-		    
                     </ul>
                 </div>
              </div>
@@ -86,12 +98,24 @@ The CryptoTracker dashboard will give users access a variety of data relevant to
     <h1 class="header-info-bottom">Ready to transform your portfolio and support the project?</h1>
     <div class="column-bottom-buttons">
       <div class="column">
-	<a href="{{ url_for('auth.register') }}" class="button-bottom"> Register</a>
-      </div>
-      <div class="column"></div>
-      <div class="column"></div>
-      <div class="column">
-        <a href="{{ url_for('home.homepage') }}" class="button-bottom"> Donate</a>
+
+       {% if current_user.is_authenticated %}
+       <a href="{{ url_for('home.homepage') }}" class="button-bottom"> Donate</a>
+       </div>
+       <div class="column"></div>
+       <div class="column"></div>
+       <div class="column">
+       <a href="{{ url_for('auth.logout') }}" class="button-bottom"> Logout</a>
+
+       {% else %}
+       <a href="{{ url_for('auth.login') }}" class="button-bottom"> Login</a>
+       </div>
+       <div class="column"></div>
+       <div class="column"></div>
+       <div class="column">
+       <a href="{{ url_for('auth.register') }}" class="button-bottom"> Register</a>
+       {% endif %}
+
       </div>
       <div class="column"></div>
     </div> 

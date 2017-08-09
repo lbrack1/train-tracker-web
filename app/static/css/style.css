@@ -126,30 +126,7 @@ p.copyright {
     margin-right: auto;
 }
 
-.icon{
-    box-sizing: border-box;
-    color: rgb(11, 14, 22);
-    cursor: pointer;
-    display: inline-block;
-    height: 24px;
-    text-align: center;
-    text-decoration: none solid rgb(11, 14, 22);
-    text-rendering: optimizeLegibility;
-    text-size-adjust: 100%;
-    vertical-align: top;
-    width: 24px;
-    column-rule-color: rgb(11, 14, 22);
-    perspective-origin: 12px 12px;
-    transform-origin: 12px 12px;
-    caret-color: rgb(11, 14, 22);
-    border: 0px none rgb(11, 14, 22);
-    font: normal normal normal normal 21px / 24px "Gotham A", "Gotham B", Helvetica, Arial, sans-serif;
-    list-style: none outside none;
-    outline: rgb(11, 14, 22) none 0px;
-    padding: 0px 4px 0px 0px;
-}
-
-/*section home page buttons
+/*section home page buttons*/
 .buttons-section {
     box-sizing: border-box;
     height: auto;
@@ -166,10 +143,9 @@ p.copyright {
     border: 0px none rgb(74, 74, 74);
     font: normal normal normal normal 16px / 24px "Gotham A", "Gotham B", Helvetica, Arial, sans-serif;
     outline: rgb(74, 74, 74) none 0px;
-    padding: 48px 24px;
 }
 
-/*
+
 .info-section {
     box-sizing: border-box;
     color: rgb(74, 74, 74);
@@ -439,13 +415,48 @@ p.copyright {
     perspective-origin: 100px 27.4062px;
     transform-origin: 100px 27.4062px;
     user-select: none;
-    caret-color: rgb(74, 74, 74);
-    background: rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;
+    caret-color: rgb(74,74,74,);
+    background: rgb(74, 74, 74,0.5) none repeat scroll 0% 0% / auto padding-box border-box;
     border: 1px solid rgb(74, 74, 74);
     border-radius: 3px 3px 3px 3px;
     font: normal normal normal normal 24px / 36px "Gotham A", "Gotham B", Helvetica, Arial, sans-serif;
     margin: 0px 4px;
     outline: rgb(74, 74, 74) none 0px;
+    padding: 20px 18px;
+    transition: none 0.086s ease-out 0s;
+}
+
+.button-top {
+    bottom: 0px;
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    display: inline-flex;
+    height: 54.8281px;
+    left: 0px;
+    position: relative;
+    right: 0px;
+    text-align: center;
+    text-decoration: none solid rgb(255, 255, 255);
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+    top: 0px;
+    vertical-align: top;
+    white-space: nowrap;
+    width: 200px;
+    column-rule-color: rgb(255, 255, 255);
+    align-items: center;
+    justify-content: center;
+    perspective-origin: 100px 27.4062px;
+    transform-origin: 100px 27.4062px;
+    user-select: none;
+    caret-color: rgb(255, 255, 255,);
+    background: rgb(255, 255, 255,0.5) none repeat scroll 0% 0% / auto padding-box border-box;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 3px 3px 3px 3px;
+    font: normal normal normal normal 24px / 36px "Gotham A", "Gotham B", Helvetica, Arial, sans-serif;
+    margin: 0px 4px;
+    outline: rgb(255, 255, 255) none 0px;
     padding: 20px 18px;
     transition: none 0.086s ease-out 0s;
 }
@@ -458,7 +469,7 @@ p.copyright {
     left: 0px;
     position: relative;
     right: 0px;
-    text-decoration: none solid rgb(74, 74, 74);
+    text-decoration: none solid rgb(255, 255, 255);
     text-rendering: optimizeLegibility;
     text-size-adjust: 100%;
     top: 0px;
