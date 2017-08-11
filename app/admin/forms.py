@@ -13,5 +13,6 @@ class UserForm(FlaskForm):
     email = StringField('Email Address', validators=[DataRequired()])
     username = StringField('Username', validators=[DataRequired()])
     password = StringField('Password', validators=[DataRequired()])
-    is_admin = BooleanField('Admin', validators=[DataRequired()])
+    is_admin = BooleanField('Admin')
+    is_blog = BooleanField('Blog')
     submit = SubmitField('Submit')
