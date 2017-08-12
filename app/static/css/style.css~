@@ -112,7 +112,7 @@ p.copyright {
 .outer {
     display: table;
     position: absolute;
-    height: 70%;
+    height: auto;
     width: 100%;
 }
 
@@ -143,7 +143,6 @@ p.copyright {
     border: 0px none rgb(74, 74, 74);
     font: normal normal normal normal 16px / 24px "Gotham A", "Gotham B", Helvetica, Arial, sans-serif;
     outline: rgb(74, 74, 74) none 0px;
-    padding: 48px 24px;
 }
 
 

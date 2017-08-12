@@ -17,7 +17,7 @@ def check_admin():
 @login_required
 def list_users():
     """
-    List all departments
+    List all users
     """
     check_admin()
 
@@ -43,7 +43,8 @@ def add_user():
                                 email=form.email.data,
                                 username = form.username.data,
                                 password = form.password.data,
-                                is_admin=form.is_admin.data)
+                                is_admin=form.is_admin.data,
+                                is_blog=form.is_blog.data)
         try:
             # add user to the database
             db.session.add(user)
@@ -79,6 +80,7 @@ def edit_user(id):
         user.email = form.email.data
         user.username = form.username.data
         user.is_admin = form.is_admin.data
+        user.is_blog = form.is_blog.data
         db.session.commit()
         flash('You have successfully edited the user.')
 
@@ -89,8 +91,9 @@ def edit_user(id):
     form.last_name.data = user.last_name
     form.email.data = user.email
     form.username.data = user.username
- #   form.password.data = user.password
+#    form.password.data = user.password
     form.is_admin.data = user.is_admin
+    form.is_blog.data = user.is_blog
     return render_template('admin/users/user.html', action="Edit",
                            add_user=add_user, form=form,
                            user=user, title="Edit User")
