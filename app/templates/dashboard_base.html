@@ -1,0 +1,126 @@
+<!-- app/templates/home/dashboard_base.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{ title }} | CryptoTracker</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<!--    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet"> -->
+    <link href="{{ url_for('static', filename='css/dashboard.css') }}" rel="stylesheet">
+
+
+    <link href="{{ url_for('static', filename='css/sidenav.css') }}" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+
+
+<!-- MAIN NAV BAR -->
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+          <a class="navbar-brand topnav" href="{{ url_for('home.homepage') }}">CryptoTracker</a>
+          </div>
+          <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav navbar-right">
+		  {% if current_user.is_authenticated %}
+		      {% if current_user.is_admin %}
+              <li><a href="{{ url_for('home.admin_dashboard') }}">Dashboard</a></li>
+              <li><a href="{{ url_for('admin.list_users') }}">Users</a></li>
+	          {% else %}
+              <li><a href="{{ url_for('home.dashboard') }}">Dashboard</a></li>
+	          {% endif %}
+	            <li><a href="{{ url_for('blog.blogpage')}}">Blog</a></li>
+		          <li><a href="{{ url_for('contact.contactpage')}}">Contact</a></li>
+              <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+              <li><a><i class="fa fa-user"></i>  Hi, {{ current_user.username }}!</a></li>
+	          {% else %}
+              <li><a href="{{ url_for('home.homepage')}}">Home</a></li>
+	            <li><a href="{{ url_for('blog.blogpage')}}">Blog</a></li>
+              <li><a href="{{ url_for('contact.contactpage')}}">Contact</a></li>
+	            <li><a href="{{ url_for('auth.login')}}">Login</a></li>
+              <li><a href="{{ url_for('auth.register')}}">Register</a></li>
+	          {% endif %}
+	            </ul>
+          </div>
+        </div>
+    </div>
+
+
+<!-- DASHBOARD NAV BAR -->
+
+<div class="wrapper">
+  <div>
+        <!-- sidebar -->
+        <div class="column col-sm-2 col-xs-1 sidebar-offcanvas" id="sidebar">
+            <ul class="nav" id="menu">
+	      <li>
+		<a href="#" data-target="#item1" data-toggle="collapse"><i class="fa fa-signal"></i> <span class="collapse in hidden-xs">Activity <span class="caret"></span></span></a>
+                    <ul class="nav nav-stacked collapse left-submenu" id="item1">
+                        <li><a href="google.com">Bitcoin</a></li>
+                        <li><a href="gmail.com">Ethereum</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" data-target="#item2" data-toggle="collapse"><i class="fa fa-smile-o"></i> <span class="collapse in hidden-xs">Sentiment <span class="caret"></span></span></a>
+                    <ul class="nav nav-stacked collapse" id="item2">
+                        <li><a href="google.com">Bitcoin</a></li>
+			<li><a href="google.com">Ethereum</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class="glyphicon glyphicon-list-alt"></i> <span class="collapse in hidden-xs">Link</span></a></li>
+            </ul>
+        </div>
+        <!-- /sidebar -->
+
+    </div>
+</div>
+
+ <!-- /sidebar -->
+
+      {% block body %}
+      {% endblock %}
+
+<!-- FOOTER BAR -->
+
+      <div class="push"></div>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="list-inline">
+                            <li><a href="{{ url_for('home.homepage') }}">Home</a></li>
+			        <li class="footer-menu-divider">.</li>
+				    {% if current_user.is_authenticated %}
+				    <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+				        {% else %}
+				        <li><a href="{{ url_for('auth.register') }}">Register</a></li>
+					    <li class="footer-menu-divider">.</li>
+					        <li><a href="{{ url_for('auth.login') }}">Login</a></li>
+						    {% endif %}
+						    <li class="footer-menu-divider">.</li>
+						        <li>
+							        <li><a href="https://twitter.com/CryptoTrackerUK">Follow Us</a></li>
+								<a href="https://twitter.com/CryptoTrackerUK" target="_blank">
+								  <span class="icon">
+								      <img src="../static/img/twitter-icon.svg"> 
+								        </span>
+								        </a>
+                    </ul>
+                    <p class="copyright text-muted small">Copyright © 2017. All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

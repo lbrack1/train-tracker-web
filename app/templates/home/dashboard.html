@@ -1,20 +1,19 @@
+
 <!-- app/templates/home/dashboard.html -->
 
-{% extends "base.html" %}
+{% extends "dashboard_base.html" %}
 {% block title %}Dashboard{% endblock %}
 {% block body %}
-
-<body class="keen-dashboard" style="padding-top: 80px;">
-
+<body class="keen-dashboard" style="padding-top: 50px;">
     <div class="container-fluid">
       <!-- Example row of columns -->
       <div class="row">
-
-          <div class="container-fluid" id="data-container"></div>
-
+	<div class="col-sm-6">
+          <div class="chart-wrapper" id="data-container"></div>
+	  </div>
         </div>
     </div>
-    <hr>
+
 
   <!-- Project Analytics -->
   <script type="text/javascript" src="../../assets/js/keen-analytics.js"></script>
