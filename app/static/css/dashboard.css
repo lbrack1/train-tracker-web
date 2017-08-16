@@ -157,9 +157,19 @@ p.copyright {
     background-color: #eee;
     padding-top: 10px;
     position:relative;
-#    width:auto;
-    max-width: 190px;
+    max-width: 150px;
     top: 55px;
+    padding-right: 0px;
+    padding-left: 0px;
+    min-height: 100%;
+    float:left
+}
+
+.container-sidenav {
+    background-color: #eee;
+    padding-top: 11px;
+    position:relative;
+    max-width: 150px;
     padding-right: 0px;
     padding-left: 0px;
     min-height: 100%;
