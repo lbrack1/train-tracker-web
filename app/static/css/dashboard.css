@@ -10,6 +10,10 @@ body, h1, h2, h3 {
     font-weight: 700;
 }
 
+.dashboard{
+	padding-top: 50px;
+}
+
 a, .navbar-default .navbar-brand, .navbar-default .navbar-nav>li>a {
   color: #3c3f56;
 }
@@ -125,9 +129,26 @@ p.copyright {
 }
 
 
-.container-fluid {
+.container-fluid-dashboard {
+    position:relative;
+    top: -160px;
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
-    margin-left: auto;
+    margin-left: 120px;
+    height: auto;
+}
+
+.chart-wrapper {
+    background: #fff;
+    border: 1px solid #e2e2e2;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+.row-dashboard{
+    position:relative;
+    top:0px;    
+    height: 50%;
+    margin: 0 auto;
 }

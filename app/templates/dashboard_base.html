@@ -63,20 +63,37 @@
         <!-- sidebar -->
         <div class="column col-sm-2 col-xs-1 sidebar-offcanvas" id="sidebar">
             <ul class="nav" id="menu">
-	      <li>
-		<a href="#" data-target="#item1" data-toggle="collapse"><i class="fa fa-signal"></i> <span class="collapse in hidden-xs">Activity <span class="caret"></span></span></a>
+
+            <li><a href="{{ url_for('home.dashboard') }}"><i class="fa fa-home"></i> <span class="collapse in hidden-xs">Dashboard</span></a></li>
+
+
+	    <li><a href="{{ url_for('home.dashboard') }}"><i class="fa fa-user-circle"></i> <span class="collapse in hidden-xs">Account</span></a></li>
+
+	    <li>
+                <a href="#" data-target="#item1" data-toggle="collapse"><i class="fa fa-btc"></i>
+ <span class="collapse in hidden-xs">Price <span class="caret"></span></span></a>
                     <ul class="nav nav-stacked collapse left-submenu" id="item1">
                         <li><a href="google.com">Bitcoin</a></li>
                         <li><a href="gmail.com">Ethereum</a></li>
                     </ul>
                 </li>
+
+	      <li>
+		<a href="#" data-target="#item2" data-toggle="collapse"><i class="fa fa-line-chart"></i> <span class="collapse in hidden-xs">Activity <span class="caret"></span></span></a>
+                    <ul class="nav nav-stacked collapse left-submenu" id="item2">
+                        <li><a href="google.com">Bitcoin</a></li>
+                        <li><a href="gmail.com">Ethereum</a></li>
+                    </ul>
+                </li>
+
                 <li>
-                    <a href="#" data-target="#item2" data-toggle="collapse"><i class="fa fa-smile-o"></i> <span class="collapse in hidden-xs">Sentiment <span class="caret"></span></span></a>
-                    <ul class="nav nav-stacked collapse" id="item2">
+                    <a href="#" data-target="#item3" data-toggle="collapse"><i class="fa fa-smile-o"></i> <span class="collapse in hidden-xs">Sentiment <span class="caret"></span></span></a>
+                    <ul class="nav nav-stacked collapse" id="item3">
                         <li><a href="google.com">Bitcoin</a></li>
 			<li><a href="google.com">Ethereum</a></li>
                     </ul>
                 </li>
+
                 <li><a href="#"><i class="glyphicon glyphicon-list-alt"></i> <span class="collapse in hidden-xs">Link</span></a></li>
             </ul>
         </div>
