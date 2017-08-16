@@ -155,7 +155,6 @@ p.copyright {
 
 .container-ticker {
     background-color: #eee;
-    padding-top: 10px;
     position:relative;
     max-width: 150px;
     top: 55px;
@@ -166,12 +165,13 @@ p.copyright {
 }
 
 .container-sidenav {
+    border-radius: 3px;
+    border: 1px solid #CCCCCC;
     background-color: #eee;
     padding-top: 11px;
     position:relative;
     max-width: 150px;
     padding-right: 0px;
     padding-left: 0px;
-    min-height: 100%;
     float:left
 }
