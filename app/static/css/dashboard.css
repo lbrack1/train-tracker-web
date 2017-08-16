@@ -152,3 +152,16 @@ p.copyright {
     height: 50%;
     margin: 0 auto;
 }
+
+.container-ticker {
+    background-color: #eee;
+    padding-top: 10px;
+    position:relative;
+#    width:auto;
+    max-width: 190px;
+    top: 55px;
+    padding-right: 0px;
+    padding-left: 0px;
+    min-height: 100%;
+    float:left
+}
