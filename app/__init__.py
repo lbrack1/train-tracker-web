@@ -38,15 +38,18 @@ def create_app(config_name):
 
     migrate = Migrate(app,db)
 
+    Bootstrap(app)
+
     from app import models
+
+    from .dashboard import dashboard as dashboard_blueprint
+    app.register_blueprint(dashboard_blueprint)
 
     from .admin import admin as admin_blueprint
     app.register_blueprint(admin_blueprint, url_prefix='/admin')
 
     from .auth import auth as auth_blueprint
     app.register_blueprint(auth_blueprint)
-
-    Bootstrap(app)
 
     from .home import home as home_blueprint
     app.register_blueprint(home_blueprint)
@@ -57,7 +60,7 @@ def create_app(config_name):
     from .blog import blog as blog_blueprint
     app.register_blueprint(blog_blueprint)
 
-    #ERROR HANDLERS
+    # Error handlers 
     @app.errorhandler(403)
     def forbidden(error):
         return render_template('errors/403.html', title='Forbidden'), 403

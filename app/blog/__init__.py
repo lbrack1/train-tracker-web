@@ -1,5 +1,4 @@
-# app/blog/__init__.py                                                                                                                                                           
-
+# app/blog/__init__.py                                                                                                                                        
 from flask import Blueprint
 
 blog = Blueprint('blog', __name__)

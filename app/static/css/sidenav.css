@@ -1,9 +1,9 @@
-html, body {
-   height: 50%;
+\html, body {
+   height: 100%;
 }
 
 .wrapper, .row {
-   height: 50%;
+   height: auto;
    margin-left:0;
    margin-right:0;
 }
@@ -21,10 +21,10 @@ html, body {
 
 #sidebar {
     background-color: #eee;
-    padding-top: -20;
+    padding-top: 50px;
     padding-left: 0;
     float: left;
-    min-height: 100%;
+    min-height: -webkit-fill-available;
 }
 
 #sidebar .collapse.in {

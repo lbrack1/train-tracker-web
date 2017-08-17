@@ -34,10 +34,10 @@
               <ul class="nav navbar-nav navbar-right">
 	  {% if current_user.is_authenticated %}
 	    {% if current_user.is_admin %}
-              <li><a href="{{ url_for('home.admin_dashboard') }}">Dashboard</a></li>
+              <li><a href="{{ url_for('dashboard.admin_dashboard') }}">Dashboard</a></li>
               <li><a href="{{ url_for('admin.list_users') }}">Users</a></li>
 	    {% else %}
-              <li><a href="{{ url_for('home.dashboard') }}">Dashboard</a></li>
+              <li><a href="{{ url_for('dashboard.dashboard') }}">Dashboard</a></li>
 	    {% endif %}
 	      <li><a href="{{ url_for('blog.blogpage')}}">Blog</a></li>
 	      <li><a href="{{ url_for('contact.contactpage')}}">Contact</a></li>

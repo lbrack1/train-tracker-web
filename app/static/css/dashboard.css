@@ -105,9 +105,8 @@ p.copyright {
     font-size: 14px;
 }
 .wrapper {
-  min-height: 100%;
-  height: auto !important;
-  height: 100%;
+#  height: 110%;	 
+  #height: auto !important;
   margin: 0 auto -4em;
 }
 
@@ -169,7 +168,6 @@ p.copyright {
     border: 1px solid #CCCCCC;
     background-color: #eee;
     padding-top: 11px;
-    position:relative;
     max-width: 150px;
     padding-right: 0px;
     padding-left: 0px;

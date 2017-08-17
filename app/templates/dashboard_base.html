@@ -34,10 +34,10 @@
               <ul class="nav navbar-nav navbar-right">
 		  {% if current_user.is_authenticated %}
 		      {% if current_user.is_admin %}
-              <li><a href="{{ url_for('home.admin_dashboard') }}">Dashboard</a></li>
+              <li><a href="{{ url_for('dashboard.admin_dashboard') }}">Dashboard</a></li>
               <li><a href="{{ url_for('admin.list_users') }}">Users</a></li>
 	          {% else %}
-              <li><a href="{{ url_for('home.dashboard') }}">Dashboard</a></li>
+              <li><a href="{{ url_for('dashboard.dashboard') }}">Dashboard</a></li>
 	          {% endif %}
 	            <li><a href="{{ url_for('blog.blogpage')}}">Blog</a></li>
 		          <li><a href="{{ url_for('contact.contactpage')}}">Contact</a></li>
@@ -56,6 +56,7 @@
     </div>
 
 
+
 <!-- DASHBOARD NAV BAR -->
 
 <div class="wrapper">
@@ -64,24 +65,24 @@
         <div class="container-sidenav col-sm-2 col-xs-1 sidebar-offcanvas" id="sidebar">
             <ul class="nav" id="menu">
 
-            <li><a href="{{ url_for('home.dashboard') }}"><i class="fa fa-home"></i> <span class="collapse in hidden-xs">Dashboard</span></a></li>
+            <li><a href="{{ url_for('dashboard.dashboard') }}"><i class="fa fa-home"></i> <span class="collapse in hidden-xs">Dashboard</span></a></li>
 
 
-	    <li><a href="{{ url_for('home.dashboard') }}"><i class="fa fa-user-circle"></i> <span class="collapse in hidden-xs">Account</span></a></li>
+<li><a href="{{ url_for('dashboard.dashboard_account') }}"><i class="fa fa-user-circle"></i> <span class="collapse in hidden-xs">Account</span></a></li>
 
-	    <li>
-                <a href="#" data-target="#item1" data-toggle="collapse"><i class="fa fa-btc"></i>
- <span class="collapse in hidden-xs">Price <span class="caret"></span></span></a>
+            <li>
+                <a href="#" data-target="#item1" data-toggle="collapse"><i class="fa fa-btc"></i> 
+<span class="collapse in hidden-xs">Price <span class="caret"></span></span></a>
                     <ul class="nav nav-stacked collapse left-submenu" id="item1">
-                        <li><a href="google.com">Bitcoin</a></li>
+                        <li><a href="{{ url_for('dashboard.dashboard_price_btc') }}">Bitcoin</a></li>
                         <li><a href="gmail.com">Ethereum</a></li>
                     </ul>
                 </li>
 
-	      <li>
-		<a href="#" data-target="#item2" data-toggle="collapse"><i class="fa fa-line-chart"></i> <span class="collapse in hidden-xs">Activity <span class="caret"></span></span></a>
+              <li>
+                <a href="#" data-target="#item2" data-toggle="collapse"><i class="fa fa-line-chart"></i> <span class="collapse in hidden-xs">Activity <span class="caret"></span></pan></a>
                     <ul class="nav nav-stacked collapse left-submenu" id="item2">
-                        <li><a href="google.com">Bitcoin</a></li>
+                        <li><a href="{{ url_for('dashboard.dashboard_activity_btc') }}">Bitcoin</a></li>
                         <li><a href="gmail.com">Ethereum</a></li>
                     </ul>
                 </li>
@@ -90,35 +91,28 @@
                     <a href="#" data-target="#item3" data-toggle="collapse"><i class="fa fa-smile-o"></i> <span class="collapse in hidden-xs">Sentiment <span class="caret"></span></span></a>
                     <ul class="nav nav-stacked collapse" id="item3">
                         <li><a href="google.com">Bitcoin</a></li>
-			<li><a href="google.com">Ethereum</a></li>
+                        <li><a href="google.com">Ethereum</a></li>
                     </ul>
                 </li>
 
                 <li><a href="#"><i class="glyphicon glyphicon-list-alt"></i> <span class="collapse in hidden-xs">Link</span></a></li>
             </ul>
-        </div>
 
-        <!-- /sidebar -->
-
-    </div>
-</div>
-
-<div class="container-ticker col-sm-2  col-xs-1 sidebar-offcanvas" id="sidebar">
   <!-- Currency Ticker -->
 <script type="text/javascript">
 crypt_multi_num_cur = "6";
 crypt_base_cur_0 = "Bitcoin (BTC)";crypt_target_cur_0 = "US Dollar (USD)";crypt_base_cur_1 = "Ethereum (ETH)";crypt_target_cur_1 = "US Dollar (USD)";crypt_base_cur_2 = "Litecoin (LTC)";crypt_target_cur_2 = "US Dollar (USD)";crypt_base_cur_3 = "Ripple (XRP)";crypt_target_cur_3 = "US Dollar (USD)";crypt_base_cur_4 = "Bitcoin Cash (BCC)";crypt_target_cur_4 = "US Dollar (USD)";crypt_base_cur_5 = "NEO (NEO)";crypt_target_cur_5 = "US Dollar (USD)";crypt_multi_border_corners = "square";crypt_multi_font_color = "#3c3f56";</script><script type="text/javascript" src="https://www.cryptonator.com/ui/js/widget/multi_widget.js"></script>
 </div>
+        <!-- /sidebar -->
+    </div>
+</div>
 
 
 
 
-      {% block body %} 
+    <div class="wrapper">
+      {% block body %}
       {% endblock %}
-
-
-<!-- FOOTER BAR -->
-
       <div class="push"></div>
     </div>
     <footer>
@@ -127,22 +121,22 @@ crypt_base_cur_0 = "Bitcoin (BTC)";crypt_target_cur_0 = "US Dollar (USD)";crypt_
                 <div class="col-lg-12">
                     <ul class="list-inline">
                             <li><a href="{{ url_for('home.homepage') }}">Home</a></li>
-			        <li class="footer-menu-divider">.</li>
-				    {% if current_user.is_authenticated %}
-				    <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
-				        {% else %}
-				        <li><a href="{{ url_for('auth.register') }}">Register</a></li>
-					    <li class="footer-menu-divider">.</li>
-					        <li><a href="{{ url_for('auth.login') }}">Login</a></li>
-						    {% endif %}
-						    <li class="footer-menu-divider">.</li>
-						        <li>
-							        <li><a href="https://twitter.com/CryptoTrackerUK">Follow Us</a></li>
-								<a href="https://twitter.com/CryptoTrackerUK" target="_blank">
-								  <span class="icon">
-								      <img src="../static/img/twitter-icon.svg"> 
-								        </span>
-								        </a>
+                            <li class="footer-menu-divider">.</li>
+                            {% if current_user.is_authenticated %}
+                            <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+                            {% else %}
+                            <li><a href="{{ url_for('auth.register') }}">Register</a></li>
+                            <li class="footer-menu-divider">.</li>
+                            <li><a href="{{ url_for('auth.login') }}">Login</a></li>
+                            {% endif %}
+                            <li class="footer-menu-divider">.</li>
+                            <li>
+                              <li><a href="https://twitter.com/CryptoTrackerUK">Follow Us</a></li>
+                              <a href="https://twitter.com/CryptoTrackerUK" target="_blank">
+                                <span class="icon">
+                                  <img src="../static/img/twitter-icon.svg">
+                                  </span>
+                              </a>
                     </ul>
                     <p class="copyright text-muted small">Copyright © 2017. All Rights Reserved</p>
                 </div>
@@ -151,3 +145,4 @@ crypt_base_cur_0 = "Bitcoin (BTC)";crypt_target_cur_0 = "US Dollar (USD)";crypt_
     </footer>
 </body>
 </html>
+
