@@ -16,7 +16,7 @@ function requestData() {
 		chart.series[0].addPoint(point, true, shift);
 
 		// call it again after one second
-		setTimeout(requestData, 1000);
+		setTimeout(requestData, 2500);
 	    },
 		cache: false
 		});
@@ -32,7 +32,7 @@ $(document).ready(function() {
 		    }
 		},
 		title: {
-		    text: 'Live random data'
+		    text: 'Tweets per second mentioning bitcoin'
 		},
 		xAxis: {
 		    type: 'datetime',
@@ -43,12 +43,12 @@ $(document).ready(function() {
 		    minPadding: 0.2,
 		    maxPadding: 0.2,
 		    title: {
-			text: 'Value',
+			text: 'Time',
 			margin: 80
 		    }
 		},
 		series: [{
-			name: 'Random data',
+			name: 'Tweets Per Second',
 			data: []
 		    }]
 	    });

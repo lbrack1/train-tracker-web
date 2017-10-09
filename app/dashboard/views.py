@@ -3,6 +3,7 @@
 from flask import abort, render_template, make_response
 from flask_login import current_user, login_required
 import MySQLdb
+import datetime
 
 #TEST
 import json
@@ -58,42 +59,48 @@ def dashboard_sentiment():
 def live_data():
     
     # Open a database connection
-    #connection = MySQLdb.connect (host = "localhost", user = "leobrack", passwd = "password", db = "crypto_db")
+    connection = MySQLdb.connect (host = "localhost", user = "leobrack", passwd = "password", db = "crypto_db")
 
     # Prepare a cursor object using cursor() method
-    #cursor = connection.cursor ()
+    cursor = connection.cursor ()
     
     #Get last x seconds of tweets from mysql
-   # nowtime = datetime.datetime.now()
-   # prevtime = nowtime - datetime.timedelta(seconds=x)
+    end = datetime.datetime.now()
+    start = datetime.datetime.now() - datetime.timedelta(seconds = 10)
    # nowtimestr = nowtime.strftime('%Y-%m-%d %H:%M:%S.%f')
    # prevtimestr = prevtime.strftime('%Y-%m-%d %H:%M:%S.%f')
     
     # Execute the SQL query using execute() method.
-    #cursor.execute ("select text from twitter where created_at between '" + nowtimestr + "' and '" + prevtimestr + "';")
+    query = ("select time, tps from processed_tweets where time between %s and %s ")
 
-    # FOR DEVELOPMENT! Execute the SQL query using execute() method.
-    #cursor.execute ("select id from twitter where created_at between '2017-08-09 09:59:30' and '2017-08-11 13:50:32';")
+    cursor.execute(query, (start,end))
 
     # Fetch all of the rows from the query
-    #id  = cursor.fetchall ()
-        
+    tps  = cursor.fetchall ()
+    
+    list = []
+    for i in range(len(tps)):
+        list.append(tps[i][0])
+
     # Close the cursor object
-    #cursor.close ()
+    cursor.close ()
 
     # Close the connection
-    #connection.close ()
+    connection.close ()
 
+    data = [time() * 1000,list]
+    response = make_response(json.dumps(data))
+    response.content_type = 'application/json'
+    return response
 
     #################################TEST########################
 
 
     # Create a PHP array and echo it as JSON
-    data = [time() * 1000, random() * 100]
-    response = make_response(json.dumps(data))
-    response.content_type = 'application/json'
-    return response
-
-#    return id
+    #data = [time() * 1000, random() * 100]
+    #response = make_response(json.dumps(data))
+    #response.content_type = 'application/json'
+    #return response
+    
     
 
