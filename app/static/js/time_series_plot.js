@@ -16,7 +16,7 @@ function requestData() {
 		chart.series[0].addPoint(point, true, shift);
 
 		// call it again after one second
-		setTimeout(requestData, 2500);
+		setTimeout(requestData, 5000);
 	    },
 		cache: false
 		});
@@ -43,7 +43,7 @@ $(document).ready(function() {
 		    minPadding: 0.2,
 		    maxPadding: 0.2,
 		    title: {
-			text: 'Time',
+			text: 'Tweets Per Second',
 			margin: 80
 		    }
 		},

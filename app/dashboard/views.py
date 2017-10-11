@@ -1,6 +1,6 @@
 # app/dashboard/views.py
 
-from flask import abort, render_template, make_response
+from flask import abort, render_template, make_response, jsonify
 from flask_login import current_user, login_required
 import MySQLdb
 import datetime
@@ -65,22 +65,18 @@ def live_data():
     cursor = connection.cursor ()
     
     #Get last x seconds of tweets from mysql
-    end = datetime.datetime.now()
-    start = datetime.datetime.now() - datetime.timedelta(seconds = 10)
-   # nowtimestr = nowtime.strftime('%Y-%m-%d %H:%M:%S.%f')
-   # prevtimestr = prevtime.strftime('%Y-%m-%d %H:%M:%S.%f')
-    
+    now_time = time()*1000 #record time for plot (datetime format not json serializable)
+    start = datetime.datetime.now() - datetime.timedelta(seconds = 9.5)
+    end = datetime.datetime.now()    
     # Execute the SQL query using execute() method.
-    query = ("select time, tps from processed_tweets where time between %s and %s ")
-
+    query = ("select tps from processed_tweets where time between %s and %s ")
     cursor.execute(query, (start,end))
 
     # Fetch all of the rows from the query
-    tps  = cursor.fetchall ()
+    (tps,)  = cursor.fetchone()
     
-    list = []
-    for i in range(len(tps)):
-        list.append(tps[i][0])
+
+    data = [now_time,tps]
 
     # Close the cursor object
     cursor.close ()
@@ -88,7 +84,7 @@ def live_data():
     # Close the connection
     connection.close ()
 
-    data = [time() * 1000,list]
+    # Echo data as JSON
     response = make_response(json.dumps(data))
     response.content_type = 'application/json'
     return response
