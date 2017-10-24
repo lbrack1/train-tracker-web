@@ -1,9 +1,11 @@
+from __future__ import division
 # app/dashboard/views.py
 
 from flask import abort, render_template, make_response, jsonify
 from flask_login import current_user, login_required
 import MySQLdb
 import datetime
+
 
 #TEST
 import json
@@ -66,16 +68,24 @@ def live_data():
     
     #Get last x seconds of tweets from mysql
     now_time = time()*1000 #record time for plot (datetime format not json serializable)
-    start = datetime.datetime.now() - datetime.timedelta(seconds = 9.5)
+    start = datetime.datetime.now() - datetime.timedelta(seconds = 30)
     end = datetime.datetime.now()    
     # Execute the SQL query using execute() method.
-    query = ("select tps from processed_tweets where time between %s and %s ")
+    query = ("select text from raw_tweets where created_at between %s and %s ")
     cursor.execute(query, (start,end))
 
     # Fetch all of the rows from the query
-    (tps,)  = cursor.fetchone()
-    
+    try:
+        # Data returned as tuple so must be unpacked
+        tweets  = cursor.fetchall()
+        num_tweets = len(tweets)
+        tps = num_tweets/30
 
+    # Due to time scnychronisity errors, sometimes no data is returned
+    # To prevent the script crashing, tps value manually set to zero
+    except TypeError:
+        tps = 0.0
+        
     data = [now_time,tps]
 
     # Close the cursor object
@@ -97,6 +107,8 @@ def live_data():
     #response = make_response(json.dumps(data))
     #response.content_type = 'application/json'
     #return response
-    
-    
+
+
+
+
 
