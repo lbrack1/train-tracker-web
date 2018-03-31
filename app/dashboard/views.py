@@ -6,12 +6,8 @@ from flask_login import current_user, login_required
 import MySQLdb
 import datetime
 
-
-#TEST
 import json
 from time import time
-from random import random
-#
 
 from . import dashboard as dashb
 
@@ -29,36 +25,61 @@ def dashboard():
 @dashb.route('/dashboard/admin')
 @login_required
 def admin_dashboard():
+
 #    prevent non-admins from accessing the page
     if not current_user.is_admin:
         abort(403)
 
     return render_template('dashboard/admin_dashboard.html', title="Dashboard")
 
+# Add account user account view
 @dashb.route('/dashboard/account')
 @login_required
 def dashboard_account():
     return render_template('dashboard/account.html', title="Account")
 
+# Add btc actvity page
 @dashb.route('/dashboard/activity/btc')
 @login_required
 def dashboard_activity_btc():
     return render_template('dashboard/activity/btc_activity.html', title="Btc")
 
-@dashb.route('/dashboard/price/btc')
-@login_required
-def dashboard_price_btc():
-    return render_template('dashboard/price/btc_price.html', title="Btc")
+def get_tweets(mins=30):
+    # Open a database connection     
+    connection = MySQLdb.connect (host = "localhost", user = "leobrack", passwd  = "password", db = "crypto_db")
+    
+    # Prepare a cursor object using cursor() method 
+    cursor = connection.cursor ()
 
-@dashb.route('/dashboard/sentiment/btc')
-@login_required
-def dashboard_sentiment():
-    return render_template('dashboard/sentiment/btc_sentiment.html', title="Btc")
+    #Get last x seconds of tweets from mysql
+    now_time = time()*1000 #record time for plot (datetime format not json serializable)
+    start = datetime.datetime.now() - datetime.timedelta(minutes = 30)
+    end = datetime.datetime.now()
+    # Execute the SQL query using execute() method.                                                                                                              
 
-# add page to route data
-@dashb.route('/dashboard/activity/live-data')
+    query = ("select text from raw_tweets where created_at between %s and %s ")
+    cursor.execute(query, (start,end))
+    tweets  = cursor.fetchall()
+    return tweets
+
+# raw text page
+@dashb.route('/dashboard/raw_text', methods=['GET'])
 @login_required
-def live_data():
+def get_raw_tweets():
+    count = 0
+    tweets = get_tweets(1)
+    text = ""
+    for tweet in tweets:
+        text = text + tweet[count] + "<br>"
+        count = count + 1
+
+    return text
+
+
+# add page to route raw data
+@dashb.route('/dashboard/raw_data')
+@login_required
+def raw_data():
     
     # Open a database connection
     connection = MySQLdb.connect (host = "localhost", user = "leobrack", passwd = "password", db = "crypto_db")
@@ -101,12 +122,34 @@ def live_data():
 
     #################################TEST########################
 
+# add page to route raw data
+@dashb.route('/dashboard/chart_data')
+@login_required
+def chart_data():
+    
+    # Open a database connection
+    connection = MySQLdb.connect (host = "localhost", user = "leobrack", passwd = "password", db = "crypto_db")
 
-    # Create a PHP array and echo it as JSON
-    #data = [time() * 1000, random() * 100]
-    #response = make_response(json.dumps(data))
-    #response.content_type = 'application/json'
-    #return response
+    # Prepare a cursor object using cursor() method
+    cursor = connection.cursor ()
+       
+    # Execute the SQL query using execute() method.
+    query = ("select count(*) from raw_tweets")
+    cursor.execute(query)
+
+    count_1 = cursor.fetchone()
+    
+    # Close the cursor object
+    cursor.close ()
+
+    # Close the connection
+    connection.close ()
+
+    print str(count_1[0])
+
+    response = make_response(json.dumps(count_1))
+    response.content_type = 'application/json'
+    return response
 
 
 

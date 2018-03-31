@@ -6,16 +6,16 @@ var chart;
  */
 function requestData() {
     $.ajax({
-	    url: 'live-data',
+	    url: '/../dashboard/raw_data',
 		success: function(point) {
 		var series = chart.series[0],
-		    shift = series.data.length > 300; // shift if the series is
-		// longer than 20
+		    shift = series.data.length > 240; // shift if the series is
+		// longer than 240 (240*5s = 1500s = 20 minutes of data)
 
 		// add the point
 		chart.series[0].addPoint(point, true, shift);
 
-		// call it again after one second
+		// call it again after one 5s
 		setTimeout(requestData, 5000);
 	    },
 		cache: false
